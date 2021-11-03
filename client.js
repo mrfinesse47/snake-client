@@ -1,3 +1,8 @@
+// "Move: up" - move up one square (unless facing down)
+// "Move: down" - move down one square (unless facing up)
+// "Move: left" - move left one square (unless facing right)
+// "Move: right" - move left one square (unless facing left)
+
 const net = require("net");
 
 const connect = function () {
@@ -11,7 +16,12 @@ const connect = function () {
 
   conn.on("connect", () => {
     console.log("successful connection to server!");
-    conn.write("Name: KRM");
+    conn.write("Name: YXT");
+    //"Move: up"
+
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 50);
   });
 
   conn.on("data", (data) => {
